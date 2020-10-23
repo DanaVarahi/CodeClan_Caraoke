@@ -11,4 +11,5 @@ class Room:
         self.guests.append(guest)
 
     def check_out_guest_from_room(self, guest):
-        self.guests.remove(guest)
+        if len(self.guests) > 0:
+            self.guests.remove(guest)
