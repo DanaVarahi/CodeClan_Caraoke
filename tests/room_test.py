@@ -8,3 +8,6 @@ class TestRoom(unittest.TestCase):
 
     def test_room_has_number(self):
         self.assertEqual(1, self.room.number)
+
+    def test_room_has_a_playlist(self):
+        self.assertEqual(['song1', 'song2'], self.room.playlist)
