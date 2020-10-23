@@ -21,3 +21,8 @@ class TestRoom(unittest.TestCase):
     def test_check_in_guest_to_room(self):
         self.room.check_in_guest_to_room(self.new_guest)
         self.assertEqual(['guest1'], self.room.guests)
+
+    def test_check_out_guest_from_room(self):
+        self.room.check_in_guest_to_room(self.new_guest)
+        self.room.check_out_guest_from_room(self.new_guest)
+        self.assertEqual([], self.room.guests)
