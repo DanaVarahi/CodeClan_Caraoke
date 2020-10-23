@@ -3,5 +3,5 @@ class Room:
         self.number = number
         self.playlist = []
 
-    # def add_song_to_playlist(self, song):
-    #     self.playlist.append(song)
+    def add_song_to_playlist(self, song):
+        self.playlist.append(song)
