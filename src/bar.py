@@ -6,3 +6,6 @@ class Bar:
         self.queue = []
         self.till = till
         self.drinks = []
+
+    def add_guest_to_queue(self, guest):
+        self.queue.append(guest)
