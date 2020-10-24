@@ -10,3 +10,6 @@ class Bar:
 
     def add_guest_to_queue(self, guest):
         self.queue.append(guest)
+
+    def charge_guest(self, price):
+        self.till += price

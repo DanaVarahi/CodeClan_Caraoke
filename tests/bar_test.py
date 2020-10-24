@@ -46,3 +46,7 @@ class TestBar(unittest.TestCase):
     def test_add_guest_to_queue(self):
         self.bar.add_guest_to_queue(self.new_guest)
         self.assertEqual(1, len(self.bar.queue))
+
+    def test_charge_guest(self):
+        self.bar.charge_guest(100)
+        self.assertEqual(1100, self.bar.till)
