@@ -39,3 +39,7 @@ class TestRoom(unittest.TestCase):
                             'guest3', 'guest4', 'guest5', 'guest6']
         self.assertEqual(
             'Room is full.', self.room.check_in_guest_to_room(self.new_guest))
+
+    def test_put_fee_on_tab(self):
+        self.room.put_fee_on_tab(50)
+        self.assertEqual(50, self.room.tab)

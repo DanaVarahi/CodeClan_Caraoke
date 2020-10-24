@@ -4,6 +4,7 @@ class Room:
         self.playlist = []
         self.guests = []
         self.capacity = capacity
+        self.tab = 0
 
     def add_song_to_playlist(self, song):
         self.playlist.append(song)
@@ -17,3 +18,6 @@ class Room:
     def check_out_guest_from_room(self, guest):
         if len(self.guests) > 0:
             self.guests.remove(guest)
+
+    def put_fee_on_tab(self, fee):
+        self.tab += fee
