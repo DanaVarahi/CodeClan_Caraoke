@@ -1,14 +1,18 @@
 class Room:
-    def __init__(self, number):
+    def __init__(self, number, capacity):
         self.number = number
         self.playlist = []
         self.guests = []
+        self.capacity = capacity
 
     def add_song_to_playlist(self, song):
         self.playlist.append(song)
 
     def check_in_guest_to_room(self, guest):
-        self.guests.append(guest)
+        if len(self.guests) < self.capacity:
+            self.guests.append(guest)
+        else:
+            return 'Room is full.'
 
     def check_out_guest_from_room(self, guest):
         if len(self.guests) > 0:
