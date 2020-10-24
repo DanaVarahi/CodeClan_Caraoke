@@ -1,10 +1,14 @@
 import unittest
 from src.guest import Guest
+from src.room import Room
 
 
 class TestGuest(unittest.TestCase):
     def setUp(self):
         self.guest = Guest('Dana', 500, 'Cosmic Woman by Christian Winter')
+        self.room = Room(1, 6)
+        self.room.playlist = ['We will Rock you by Queen',
+                              'Cosmic Woman by Christian Winter']
 
     def test_guest_has_name(self):
         self.assertEqual('Dana', self.guest.name)
@@ -19,3 +23,7 @@ class TestGuest(unittest.TestCase):
     def test_guest_has_fav_song(self):
         self.assertEqual('Cosmic Woman by Christian Winter',
                          self.guest.fav_song)
+
+    def test_guest_cheers_fav_song(self):
+        self.assertEqual(
+            'Whoo!', self.guest.guest_cheers_fav_song(self.room.playlist))
