@@ -15,8 +15,8 @@ class TestBar(unittest.TestCase):
              'price': 500}
         ]
         self.bar.music_library = [Song('Closer', 'Nine Inch Nails'),
-                                  Song('Crack of Doom', 'Tiger Lillies'), Song(
-                                      'Hunter', 'Björk'),
+                                  Song('Crack of Doom', 'Tiger Lillies'),
+                                  Song('Hunter', 'Björk'),
                                   Song('The Wizard', 'Black Sabbath'),
                                   Song('Fear of the Dark', 'Iron Maiden')]
 
@@ -50,3 +50,8 @@ class TestBar(unittest.TestCase):
     def test_charge_guest(self):
         self.bar.charge_guest(100)
         self.assertEqual(1100, self.bar.till)
+
+    def test_search_music_library_by_artist(self):
+
+        self.assertEqual('Crack of Doom', self.bar.search_music_library_by_artist(
+            self.bar.music_library, 'Tiger Lillies').title)

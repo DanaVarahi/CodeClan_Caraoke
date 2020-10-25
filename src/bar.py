@@ -13,3 +13,9 @@ class Bar:
 
     def charge_guest(self, price):
         self.till += price
+
+    def search_music_library_by_artist(self, library, artist):
+
+        for song in library:
+            if song.artist == artist:
+                return song
