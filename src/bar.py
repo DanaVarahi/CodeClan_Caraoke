@@ -19,3 +19,9 @@ class Bar:
         for song in library:
             if song.artist == artist:
                 return song
+
+    def find_drink_price_by_name(self, drinks, name):
+
+        for drink in drinks:
+            if drink['name'] == name:
+                return drink['price']
