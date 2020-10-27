@@ -54,8 +54,8 @@ class TestBar(unittest.TestCase):
     def test_search_music_library_by_artist(self):
 
         self.assertEqual('Crack of Doom', self.bar.search_music_library_by_artist(
-            self.bar.music_library, 'Tiger Lillies').title)
+            self.bar.music_library, 'Tiger Lillies')[0].title)
 
     def test_find_drink_price_by_name(self):
-        self.assertEqual(250, self.bar.find_drink_price_by_name(
+        self.assertEqual([250], self.bar.find_drink_price_by_name(
             self.bar.drinks, 'Red Kite Ale'))

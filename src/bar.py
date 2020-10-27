@@ -16,12 +16,11 @@ class Bar:
 
     def search_music_library_by_artist(self, library, artist):
 
-        for song in library:
-            if song.artist == artist:
-                return song
+        songs_by_artist = [song for song in library if song.artist == artist]
+        return songs_by_artist
 
     def find_drink_price_by_name(self, drinks, name):
+        matching_drink_price = [drink['price']
+                                for drink in drinks if drink['name'] == name]
 
-        for drink in drinks:
-            if drink['name'] == name:
-                return drink['price']
+        return matching_drink_price
